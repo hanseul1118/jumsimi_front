@@ -1,4 +1,4 @@
-# jusimi_front
+# jumsimi_owner_front
 
 ## Project setup
 ```
