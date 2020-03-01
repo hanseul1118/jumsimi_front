@@ -55,7 +55,7 @@
             <p>{{ restaurantAddress }}</p>
           </div>
           <div class="menu-detail-bottom-info-phone-distance">
-            <span>{{ restaurantPhone }}</span>
+            <a v-bind:href="callPhone">{{ restaurantPhone }}</a>
             <span>{{ distance }}</span>
           </div>
         </div>
@@ -165,7 +165,10 @@ export default {
       }
       
       return menuListArray
-    }
+    },
+    callPhone(){
+      return 'tel:' + this.restaurantPhone
+    },
   },
   methods: {
     changeFavoriteState: function() {
@@ -420,14 +423,15 @@ export default {
           }
         }
         .menu-detail-bottom-info-phone-distance {
-          span {
+          a:link , a:visited , a:hover {
+            color: #cf5252;
+            text-decoration: none;
+          }
+          span, a {
             font-size: 18px;
             font-weight: bold;
           }
-          span:first-child {
-            color: #cf5252;
-          }
-          span:last-child {
+          span {
             margin-left: 10px;
             color: #642A02;
           }
